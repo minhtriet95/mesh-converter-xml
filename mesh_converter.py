@@ -12,7 +12,7 @@ import numpy as np
 start_time = timeit.default_timer()
 
 # -------------------- Extract file extension -------------------- #
-filePath = 'cellAffine.msh'
+filePath = 'demo.msh'
 fileName, fileExtension = os.path.splitext(filePath)
 
 # -------------------- Read mesh -------------------- #
