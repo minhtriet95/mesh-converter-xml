@@ -90,24 +90,11 @@ for index, sideset_id in enumerate(sideset_list):
     for cell_index in cell_index_list[index]:
         boundaries.set_value(cell_index, sideset_id)
 
-# sideset_1 = boundaries.where_equal(1)
-# sideset_2 = boundaries.where_equal(2)
-# sideset_3 = boundaries.where_equal(3)
-
-# boundaries.set_all(0)
-
-# for cell_index in sideset_1:
-#     boundaries.set_value(cell_index, 1)
-# for cell_index in sideset_2:
-#     boundaries.set_value(cell_index, 2)
-# for cell_index in sideset_3:
-#     boundaries.set_value(cell_index, 3)
-
 
 # -------------------- Export to .xml files -------------------- #
-File(fileName + ".xml") << mesh
-File(fileName + "_physical_region.xml") << subdomains
-File(fileName + "_facet_region.xml") << boundaries
+File("xml/" + fileName + ".xml") << mesh
+File("xml/" + fileName + "_physical_region.xml") << subdomains
+File("xml/" + fileName + "_facet_region.xml") << boundaries
 
 stop_time = timeit.default_timer()
 run_time = round(stop_time - start_time, 2)
